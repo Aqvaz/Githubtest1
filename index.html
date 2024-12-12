@@ -1,1 +1,110 @@
-<h1>Hello! </h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi primera pagina web 12/12/2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            padding: 1rem 2rem;
+            background-color: #2230b3;
+            color: #fff;
+            text-align: center;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .main h1 {
+            font-size: 2.5rem;
+        }
+
+        .main p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .main a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #2b2eee;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .main a:hover {
+            background-color: #3013ad;
+        }
+
+        .gallery {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img {
+            width: 100%;
+            display: none;
+        }
+
+        .gallery img.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Espacio 36</h1>
+    </header>
+
+    <main class="main">
+        <h1>Bienvenido</h1>
+        <p></p>
+
+        <div class="gallery">
+            <img src="imagenes/Image1.jpg" alt="Imagen 1" class="active">
+            <img src="imagenes/Image2.jpg" alt="Imagen 2">
+            <img src="imagenes/Image3.jpg" alt="Imagen 3">
+        </div>
+
+        <a href="3GALERY.html">Descubrir</a>
+    </main>
+
+    <script>
+        // JavaScript para el cambio automático de imágenes
+        const images = document.querySelectorAll('.gallery img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Cambia cada 3 segundos
+    </script>
+</body>
+</html>
